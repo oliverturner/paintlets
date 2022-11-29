@@ -1,6 +1,6 @@
-import * as houdini from "../../../../typings/houdini";
+import * as houdini from "../../typings/houdini";
 
-import { normaliseInput } from "../../../_lib/utils";
+import { normaliseInput } from "../../lib/utils";
 
 const PI2 = Math.PI * 2;
 

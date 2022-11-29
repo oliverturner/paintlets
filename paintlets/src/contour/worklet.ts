@@ -1,23 +1,13 @@
-import type * as houdini from "../../../../typings/houdini";
 import type { NoiseFunction2D } from "simplex-noise";
-
-type Area = [number, number];
-type Point = [number, number];
-type PolyLine = Point[];
+import type * as houdini from "../../typings/houdini";
+import type { PolyLine, Area, PaintletProps } from "./types";
 
 import { createNoise2D } from "simplex-noise";
 import { mapRange, linspace } from "canvas-sketch-util/math";
 import { clipPolylinesToBox } from "canvas-sketch-util/geometry";
 import { isoBands } from "marchingsquares";
 
-import { normaliseInput } from "../../../_lib/utils";
-
-type PaintletProps = {
-	gridUnit: number;
-	lineColour: string;
-	lineWidth: number;
-	lineFrequency: number;
-};
+import { normaliseInput } from "paintlets/lib/utils";
 
 export const defaultProps = {
 	"--grid-unit": {

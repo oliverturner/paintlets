@@ -1,14 +1,9 @@
-import * as houdini from "../../../../typings/houdini";
-import { PointXY, Tile, TileProps } from "../types";
+import type * as houdini from "../../typings/houdini";
+import type { PaintletProps, PointXY, Tile, TileProps } from "./types";
 
-import { normaliseInput } from "../../../_lib/utils";
+import { normaliseInput } from "../../lib/utils";
 
-type PaintletProps = {
-  seed: number;
-  tileSize: number;
-  lineWidth: number;
-  strokeStyle: string;
-};
+
 
 export const defaultProps = {
   "--seed": {
