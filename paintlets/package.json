@@ -1,0 +1,17 @@
+{
+  "name": "paintlets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Oliver Turner",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch-util": "1.10.0",
+    "marchingsquares": "1.3.3",
+    "simplex-noise": "4.0.1"
+  },
+  "scripts": {
+    "test": "echo 'TODO: write tests'"
+  }
+}

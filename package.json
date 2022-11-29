@@ -1,0 +1,16 @@
+{
+  "name": "paintlets-v2",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "Oliver Turner",
+  "license": "ISC",
+  "workspaces": [
+    "paintlets",
+    "website"
+  ],
+  "scripts": {
+    "test": "npm t -ws",
+    "start": "npm start -w website"
+  }
+}

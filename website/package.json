@@ -1,0 +1,15 @@
+{
+  "name": "website",
+  "type": "module",
+  "dependencies": {
+    "astro": "^1.6.11"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "echo 'TODO: write tests'"
+  }
+}
