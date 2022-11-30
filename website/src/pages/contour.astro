@@ -1,8 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const isProd = import.meta.env.PROD;
-const paintletUrl = isProd
+const paintletUrl = import.meta.env.PROD
   ? "https://unpkg.com/@londoncss/paintlet-contour"
   : "../../../paintlets/src/contour/index.ts?url";
 ---
@@ -18,16 +17,16 @@ const paintletUrl = isProd
     <div class="sample__demo"></div>
   </div>
 
-  <script type="module" define:vars={{ paintletUrl }}>
-    // import "./demo.ts";
+  <script is:inline define:vars={{ paintletUrl }}>
+    async function loadPaintlet() {
+      if (CSS["paintWorklet"] === undefined) {
+        await import("https://unpkg.com/css-paint-polyfill");
+      }
 
-    if (CSS["paintWorklet"] === undefined) {
-      await import("https://unpkg.com/css-paint-polyfill");
+      CSS.paintWorklet.addModule(paintletUrl);
     }
 
-    console.log({ paintletUrl });
-
-    CSS.paintWorklet.addModule(paintletUrl);
+    loadPaintlet();
   </script>
 </Layout>
 
@@ -37,6 +36,7 @@ const paintletUrl = isProd
     --line-width: 1;
     --line-frequency: 12;
     --line-colour: #fff2;
+
     --bg: #000;
     --bg-image: paint(contour);
   }

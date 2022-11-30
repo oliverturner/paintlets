@@ -70,6 +70,7 @@ a {
 
 .sample__nav {
   display: grid;
+  align-content: center;
   gap: 1rem;
 
   margin: 0;
@@ -80,6 +81,7 @@ a {
 
 .index__item,
 .sample {
+  aspect-ratio: 1;
   overflow: hidden;
   border-radius: 0.5rem;
 
