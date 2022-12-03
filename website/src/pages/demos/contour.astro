@@ -1,0 +1,47 @@
+---
+import paintletUrl from "paintlets/src/contour/?url";
+
+import Demo from "../../layouts/demo.astro";
+---
+
+<Demo title="Contour" paintletUrl={paintletUrl}>
+  <li class="sample sample--1"><a href="#sample-1">Sample 1</a></li>
+  <li class="sample sample--2"><a href="#sample-2">Sample 2</a></li>
+  <li class="sample sample--3"><a href="#sample-3">Sample 3</a></li>
+  <li class="sample sample--4"><a href="#sample-4">Sample 4</a></li>
+</Demo>
+
+<style>
+  :root {
+    --grid-unit: 128;
+    --line-width: 1;
+    --line-frequency: 12;
+    --line-colour: #fff2;
+
+    --bg: #000;
+    --bg-image: paint(contour);
+  }
+
+  .sample--1 {
+    --bg-image: paint(contour), linear-gradient(to top, cornflowerblue, hotpink);
+  }
+
+  .sample--2 {
+    --line-colour: #0001;
+    --bg-image: paint(contour), linear-gradient(to right, gold, mediumseagreen);
+  }
+
+  .sample--3 {
+    --line-width: 1;
+    --line-colour: #ffd70088;
+    --bg-image: paint(contour), linear-gradient(to top left, red, orange);
+  }
+
+  a.sample--4 {
+    --bg: #222;
+  }
+
+  .sample__demo {
+    --line-frequency: 24;
+  }
+</style>

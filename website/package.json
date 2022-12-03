@@ -2,7 +2,8 @@
   "name": "website",
   "type": "module",
   "dependencies": {
-    "astro": "^1.6.11"
+    "astro": "^1.6.11",
+    "paintlets": "file:../paintlets"
   },
   "scripts": {
     "dev": "astro dev",

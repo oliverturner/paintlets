@@ -2,9 +2,6 @@
   "name": "paintlets",
   "version": "1.0.0",
   "type": "module",
-  "exports": {
-    "./*": "./src/*/index.ts"
-  },
   "dependencies": {
     "canvas-sketch-util": "1.10.0",
     "marchingsquares": "1.3.3",

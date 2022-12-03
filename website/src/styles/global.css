@@ -73,6 +73,8 @@ a {
   align-content: center;
   gap: 1rem;
 
+  max-height: 100vh;
+  overflow-y: auto;
   margin: 0;
   padding: 1rem;
   list-style: none;
@@ -87,6 +89,17 @@ a {
 
   background-image: var(--bg-image);
   background-color: var(--bg);
+}
+
+.sample a::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+  transition: 0.5s background-color;
+}
+
+.sample a:hover::before {
+  background-color: #fff3;
 }
 
 .contour {
