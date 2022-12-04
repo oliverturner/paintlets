@@ -1,4 +1,28 @@
-export function init() {
+import Knobs from "@yaireo/knobs";
+
+const knobConfig = {
+  CSSVarTarget: document.querySelector(".sample__demo"),
+  theme: {
+    position: "bottom right", // default is 'top left'
+  },
+  visible: 2,
+};
+
+function initKnobs() {
+  return new Knobs({
+    ...knobConfig,
+    knobs: [
+      {
+        cssVar: ["bg"], // alias for the CSS variable
+        label: "Color",
+        type: "color",
+        value: "#45FDA9",
+      },
+    ],
+  });
+}
+
+function initNav() {
   const demoLinks = document.querySelector(".page__nav__items");
   const targetEl = document.querySelector(".sample__demo") as HTMLElement;
 
@@ -10,6 +34,11 @@ export function init() {
   }
 
   demoLinks?.addEventListener("click", onClick);
+}
+
+export function init() {
+  initNav();
+  initKnobs();
 }
 
 init();
