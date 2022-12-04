@@ -1,0 +1,29 @@
+---
+export interface Props {
+  className?: string;
+};
+
+const { className } = Astro.props;
+---
+
+<nav class={className}>
+  <a class="title" href="/">Home</a>
+  <a class="title" href="/demos/contour">Contour</a>
+  <a class="title" href="/demos/seigaiha">Seigaiha</a>
+  <a class="title" href="/demos/truchet">Truchet</a>
+  <a class="title" href="/demos/hexo">Hexo</a>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-around;
+
+    padding: 0.25rem;
+    color: white;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

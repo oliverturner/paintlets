@@ -5,10 +5,12 @@ import Demo from "../../layouts/demo.astro";
 ---
 
 <Demo title="Contour" paintletUrl={paintletUrl}>
-  <li class="sample sample--1"><a href="#sample-1">Sample 1</a></li>
-  <li class="sample sample--2"><a href="#sample-2">Sample 2</a></li>
-  <li class="sample sample--3"><a href="#sample-3">Sample 3</a></li>
-  <li class="sample sample--4"><a href="#sample-4">Sample 4</a></li>
+  <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
+  <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
+  <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>
+  <li id="demo-3" class="sample" data-demo="4"><a href="#demo-4">Demo 4</a></li>
+
+  <div slot="demo" class="sample__demo" data-demo="1"></div>
 </Demo>
 
 <style>
@@ -22,22 +24,22 @@ import Demo from "../../layouts/demo.astro";
     --bg-image: paint(contour);
   }
 
-  .sample--1 {
+  [data-demo="1"] {
     --bg-image: paint(contour), linear-gradient(to top, cornflowerblue, hotpink);
   }
 
-  .sample--2 {
+  [data-demo="2"] {
     --line-colour: #0001;
     --bg-image: paint(contour), linear-gradient(to right, gold, mediumseagreen);
   }
 
-  .sample--3 {
+  [data-demo="3"] {
     --line-width: 1;
     --line-colour: #ffd70088;
     --bg-image: paint(contour), linear-gradient(to top left, red, orange);
   }
 
-  a.sample--4 {
+  [data-demo="4"] {
     --bg: #222;
   }
 
