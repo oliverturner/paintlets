@@ -1,5 +1,5 @@
 ---
-import DemoNav from "../components/demo-nav.astro";
+import AppNav from "../components/app-nav.astro";
 import Layout from "./layout.astro";
 
 export interface Props {
@@ -13,7 +13,7 @@ const { title, paintletUrl } = Astro.props;
 <Layout title={title}>
   <div class="page">
     <div class="app__nav">
-      <DemoNav />
+      <AppNav />
     </div>
     <nav class="page__nav">
       <ul class="page__nav__items">
@@ -27,7 +27,7 @@ const { title, paintletUrl } = Astro.props;
   <script type="module" define:vars={{ paintletUrl }}>
     CSS.paintWorklet.addModule(paintletUrl);
   </script>
-  <script src="../lib/demo.ts" />
+  <script src="../lib/demo.ts"></script>
 </Layout>
 
 <style>
@@ -59,10 +59,10 @@ const { title, paintletUrl } = Astro.props;
     overflow-y: auto;
     scroll-behavior: smooth;
     background-color: #000;
-  }
 
-  .page__nav:has(li:nth-child(5)) {
-    place-content: start;
+    &:has(li:nth-child(5)) {
+      place-content: start;
+    }
   }
 
   .page__nav__items {
@@ -77,10 +77,10 @@ const { title, paintletUrl } = Astro.props;
 
   .page__demo {
     grid-area: c;
-  }
 
-  .page__demo > * {
-    width: 100%;
-    height: 100%;
+    & > * {
+      width: 100%;
+      height: 100%;
+    }
   }
 </style>

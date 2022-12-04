@@ -58,45 +58,42 @@ import Layout from "../layouts/layout.astro";
 
   .sample {
     width: 200px;
-  }
 
-  .sample a {
-    display: grid;
-    align-content: end;
+    &.contour {
+      --grid-unit: 64;
+      --line-frequency: 16;
+    }
 
-    position: relative;
-    aspect-ratio: 1;
-    text-decoration: none;
-  }
+    &.seigaiha {
+      /* --bg is inherited */
+    }
 
-  .sample a::before {
-    position: absolute;
-    inset: 0;
-  }
-  .sample a span {
-    padding: 0.25rem 0.5rem;
-    background: #fffa;
-  }
+    &.truchet {
+      --tile-size: 30;
+    }
 
-  .contour {
-    --grid-unit: 64;
-    --line-frequency: 16;
-  }
+    &.hexo {
+      /* TODO vary --radius */
+      --gap: 5;
+    }
 
-  .seigaiha {
-    /* --bg is inherited */
-  }
+    & a {
+      display: grid;
+      align-content: end;
 
-  .truchet {
-    --tile-size: 30;
-  }
+      position: relative;
+      aspect-ratio: 1;
+      text-decoration: none;
 
-  .hexo {
-    /* TODO vary --radius */
-    --gap: 5;
-  }
+      &::before {
+        position: absolute;
+        inset: 0;
+      }
+    }
 
-  .index {
-    aspect-ratio: 1;
+    & span {
+      padding: 0.25rem 0.5rem;
+      background: #fffa;
+    }
   }
 </style>

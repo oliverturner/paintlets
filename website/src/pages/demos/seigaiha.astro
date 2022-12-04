@@ -36,15 +36,15 @@ import Demo from "../../layouts/demo.astro";
     --stroke-colour: hsl(200deg, 50%, 40%);
   }
 
-  .sample__demo[data-demo="1"] {
-    --river: hsl(200deg, 60%, 20%);
-  }
-
-  .sample__demo[data-demo="2"] {
-    --river: hsl(200deg, 60%, 45%);
-  }
-
-  .sample__demo[data-demo="3"] {
-    --river: hsl(200deg, 70%, 20%);
+  .sample__demo {
+    &[data-demo="1"] {
+      --river: hsl(200deg, 60%, 20%);
+    }
+    &[data-demo="2"] {
+      --river: hsl(200deg, 60%, 45%);
+    }
+    &[data-demo="3"] {
+      --river: hsl(200deg, 70%, 20%);
+    }
   }
 </style>

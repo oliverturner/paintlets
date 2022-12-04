@@ -2,8 +2,11 @@
   "name": "website",
   "type": "module",
   "dependencies": {
-    "astro": "^1.6.11",
-    "paintlets": "file:../paintlets"
+    "astro": "^1.6.12",
+    "open-props": "1.5.1",
+    "paintlets": "file:../paintlets",
+    "postcss-jit-props": "1.0.8",
+    "postcss-preset-env": "7.8.3"
   },
   "scripts": {
     "dev": "astro dev",
