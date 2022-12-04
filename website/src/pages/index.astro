@@ -8,6 +8,23 @@ import Layout from "../layouts/layout.astro";
 ---
 
 <Layout title="Home">
+  <div class="app">
+    <nav class="app__nav">
+      <div class="sample contour title">
+        <a href="/demos/contour"><span>Contour</span></a>
+      </div>
+      <div class="sample seigaiha title">
+        <a href="/demos/seigaiha"><span>Seigaiha</span></a>
+      </div>
+      <div class="sample truchet title">
+        <a href="/demos/truchet"><span>Truchet</span></a>
+      </div>
+      <div class="sample hexo title">
+        <a href="/demos/hexo"><span>Hexo</span></a>
+      </div>
+    </nav>
+  </div>
+
   <script type="module" define:vars={{ contour, seigaiha, truchet, hexo }}>
     CSS.paintWorklet.addModule(contour);
     CSS.paintWorklet.addModule(seigaiha);
@@ -27,23 +44,54 @@ import Layout from "../layouts/layout.astro";
     --line-colour: #fff6;
   }
 
-  [href="/contour"] {
-    /* TODO make these defaults for "contour" */
+  .app {
+    display: grid;
+    place-content: center;
+
+    height: 100vh;
+  }
+
+  .app__nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .sample {
+    width: 200px;
+  }
+
+  .sample a {
+    display: grid;
+    align-content: end;
+
+    position: relative;
+    aspect-ratio: 1;
+    text-decoration: none;
+  }
+
+  .sample a::before {
+    position: absolute;
+    inset: 0;
+  }
+  .sample a span {
+    padding: 0.25rem 0.5rem;
+    background: #fffa;
+  }
+
+  .contour {
     --grid-unit: 64;
     --line-frequency: 16;
   }
 
-  [href="/seigaiha"] {
+  .seigaiha {
     /* --bg is inherited */
   }
 
-  [href="/truchet"] {
-    /* TODO make "seigaiha" inherit colours? */
-    /* TODO Allow a single colour */
+  .truchet {
     --tile-size: 30;
   }
 
-  [href="/hexo"] {
+  .hexo {
     /* TODO vary --radius */
     --gap: 5;
   }

@@ -5,40 +5,42 @@ import Demo from "../../layouts/demo.astro";
 ---
 
 <Demo title="Hexo" paintletUrl={paintletUrl}>
-  <li class="sample sample--1"><a href="#sample-1">Sample 1</a></li>
-  <li class="sample sample--2"><a href="#sample-2">Sample 2</a></li>
-  <li class="sample sample--3"><a href="#sample-3">Sample 3</a></li>
-  <li class="sample sample--4"><a href="#sample-4">Sample 4</a></li>
-  <li class="sample sample--5"><a href="#sample-5">Sample 5</a></li>
-  <li class="sample sample--6"><a href="#sample-6">Sample 6</a></li>
+  <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
+  <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
+  <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>
+  <li id="demo-4" class="sample" data-demo="4"><a href="#demo-4">Demo 4</a></li>
+  <li id="demo-5" class="sample" data-demo="5"><a href="#demo-5">Demo 5</a></li>
+  <li id="demo-6" class="sample" data-demo="6"><a href="#demo-6">Demo 6</a></li>
+
+  <div slot="demo" class="sample__demo" data-demo="1"></div>
 </Demo>
 
 <style>
-  .sample {
+  [data-demo] {
     --bg: #000;
     --bg-image: paint(hexo);
     --scale: 0.002;
   }
 
-  .sample--1 {
+  [data-demo="1"] {
     --bg: hsl(0, 0%, 10%);
     --fill: hsl(0, 0%, 50%, 0.5);
   }
 
-  .sample--2 {
+  [data-demo="2"] {
     --style: hue;
     --radius: 9;
     --fill: hsla(180, 100%, 20%, 0.5);
     --bg: deeppink;
   }
 
-  .sample--3 {
+  [data-demo="3"] {
     --gap: 0.2;
     --fill: hsl(60, 100%, 70%);
     --bg: rebeccapurple;
   }
 
-  .sample--4 {
+  [data-demo="4"] {
     --radius: 30;
     --gap: 6;
     --stroke-width: 3;
@@ -48,7 +50,7 @@ import Demo from "../../layouts/demo.astro";
       linear-gradient(to top, var(--bg), var(--stroke-colour) 75%);
   }
 
-  .sample--5 {
+  [data-demo="5"] {
     --radius: 48;
     --gap: -36;
     --stroke-width: 2;
@@ -56,7 +58,7 @@ import Demo from "../../layouts/demo.astro";
     --bg: black;
   }
 
-  .sample--6 {
+  [data-demo="6"] {
     --style: rainbow;
     --radius: 20;
     --gap: 10;

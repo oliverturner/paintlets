@@ -5,26 +5,28 @@ import Demo from "../../layouts/demo.astro";
 ---
 
 <Demo title="Truchet" paintletUrl={paintletUrl}>
-  <li class="sample sample--1"><a href="#sample-1">Sample 1</a></li>
-  <li class="sample sample--2"><a href="#sample-2">Sample 2</a></li>
-  <li class="sample sample--3"><a href="#sample-3">Sample 3</a></li>
+  <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
+  <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
+  <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>
+
+  <div slot="demo" class="sample__demo" data-demo="1"></div>
 </Demo>
 
 <style>
-  .sample--1 {
+  [data-demo="1"] {
     --stroke-width: 1;
     --stroke-colour: gold;
     --bg-image: paint(truchet), linear-gradient(to bottom, #eecda3, #ef629f);
   }
 
-  .sample--2 {
+  [data-demo="2"] {
     --tile-size: 20;
     --stroke-width: 1;
     --stroke-colour: #fff5;
     --bg-image: paint(truchet), linear-gradient(to top, #373b44, #4286f4);
   }
 
-  .sample--3 {
+  [data-demo="3"] {
     --tile-size: 30;
     --stroke-width: 0.5;
     --stroke-colour: #ec38bc88;
