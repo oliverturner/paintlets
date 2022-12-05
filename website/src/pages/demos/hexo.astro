@@ -2,9 +2,50 @@
 import paintletUrl from "paintlets/src/hexo/?url";
 
 import Demo from "../../layouts/demo.astro";
+
+const knobConfig = {
+  shared: {
+    scale: 0.002,
+    bg: "#000",
+  },
+  "demo-1": {
+    fill: "hsl(0, 0%, 50%, 0.5)",
+  },
+  "demo-2": {
+    style: "hue",
+    radius: 9,
+    fill: "hsla(180, 100%, 20%, 0.5)",
+    bg: "deeppink",
+  },
+  "demo-3": {
+    gap: 0.2,
+    fill: "hsl(60, 100%, 70%)",
+    bg: "rebeccapurple",
+  },
+  "demo-4": {
+    radius: 30,
+    gap: 6,
+    "stroke-width": 3,
+    "stroke-colour": "lemonchiffon",
+    bg: "palevioletred",
+  },
+  "demo-5": {
+    radius: 48,
+    gap: -36,
+    "stroke-width": 2,
+    "stroke-colour": "#333",
+  },
+  "demo-6": {
+    style: "rainbow",
+    radius: 20,
+    gap: 10,
+    bg: "black",
+    "cube-tints": "#0003 #0006",
+  },
+};
 ---
 
-<Demo title="Hexo" paintletUrl={paintletUrl}>
+<Demo title="Hexo" {paintletUrl} {knobConfig}>
   <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
   <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
   <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>

@@ -2,9 +2,31 @@
 import paintletUrl from "paintlets/src/seigaiha/?url";
 
 import Demo from "../../layouts/demo.astro";
+
+const knobConfig = {
+  shared: {},
+  "demo-1": {
+    river: "hsl(200deg, 60%, 20%)",
+  },
+  "demo-2": {
+    rings: 4,
+    "stroke-width": 8,
+    "stroke-colour": "#222",
+    bg: "#111",
+    river: "hsl(200deg, 60%, 20%)",
+  },
+  "demo-3": {
+    rings: 8,
+    radius: 70,
+    "stroke-width": 2,
+    "stroke-colour": "hsl(200deg, 50%, 40%)",
+    bg: "hsl(200deg, 50%, 30%)",
+    river: "hsl(200deg, 70%, 20%)",
+  },
+};
 ---
 
-<Demo title="Seigaiha" paintletUrl={paintletUrl}>
+<Demo title="Seigaiha" {paintletUrl} {knobConfig}>
   <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
   <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
   <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>

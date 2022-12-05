@@ -2,9 +2,26 @@
 import paintletUrl from "paintlets/src/truchet/?url";
 
 import Demo from "../../layouts/demo.astro";
+
+const knobConfig = {
+  "demo-1": {
+    "tile-size": 20,
+    "stroke-colour": "gold",
+  },
+  "demo-2": {
+    "tile-size": 20,
+    "stroke-width": 1,
+    "stroke-colour": "#fff5",
+  },
+  "demo-3": {
+    "tile-size": 30,
+    "stroke-width": 0.5,
+    "stroke-colour": "#ec38bc88",
+  },
+};
 ---
 
-<Demo title="Truchet" paintletUrl={paintletUrl}>
+<Demo title="Truchet" {paintletUrl} {knobConfig}>
   <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
   <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
   <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>
