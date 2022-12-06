@@ -13,7 +13,7 @@ const knobConfig = {
   },
   "demo-2": {
     style: "hue",
-    radius: 9,
+    radius: 160,
     fill: "hsla(180, 100%, 20%, 0.5)",
     bg: "deeppink",
   },
@@ -64,13 +64,15 @@ const knobConfig = {
   }
 
   [data-demo="1"] {
+    --gap: -6;
+    --radius: 12;
     --bg: hsl(0, 0%, 10%);
     --fill: hsl(0, 0%, 50%, 0.5);
   }
 
   [data-demo="2"] {
     --style: hue;
-    --radius: 9;
+    --radius: 36;
     --fill: hsla(180, 100%, 20%, 0.5);
     --bg: deeppink;
   }

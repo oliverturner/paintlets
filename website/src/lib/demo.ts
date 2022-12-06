@@ -12,12 +12,12 @@ function initKnobs() {
   return new Knobs({
     ...knobConfig,
     knobs: [
-      {
-        cssVar: ["bg"], // alias for the CSS variable
-        label: "Color",
-        type: "color",
-        value: "#45FDA9",
-      },
+      // {
+      //   cssVar: ["bg"], // alias for the CSS variable
+      //   label: "Color",
+      //   type: "color",
+      //   value: "#45FDA9",
+      // },
     ],
   });
 }
