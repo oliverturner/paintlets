@@ -2,9 +2,27 @@
 import paintletUrl from "paintlets/src/contour/?url";
 
 import Demo from "../../layouts/demo.astro";
+
+const knobConfig = {
+  shared: {
+    "grid-unit": 128,
+    "line-width": 1,
+    "line-frequency": 12,
+    "line-colour": "#fff2",
+  },
+  "demo-1": {},
+  "demo-2": {
+    "line-colour": "#0001",
+  },
+  "demo-3": {
+    "line-width": 1,
+    "line-colour": "#ffd70088",
+  },
+  "demo-4": {},
+};
 ---
 
-<Demo title="Contour" paintletUrl={paintletUrl}>
+<Demo title="Contour" {paintletUrl} {knobConfig}>
   <li id="demo-1" class="sample" data-demo="1"><a href="#demo-1">Demo 1</a></li>
   <li id="demo-2" class="sample" data-demo="2"><a href="#demo-2">Demo 2</a></li>
   <li id="demo-3" class="sample" data-demo="3"><a href="#demo-3">Demo 3</a></li>

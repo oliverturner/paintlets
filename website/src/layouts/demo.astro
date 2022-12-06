@@ -5,9 +5,11 @@ import Layout from "./layout.astro";
 export interface Props {
   title: string;
   paintletUrl: string;
+  knobConfig?: Record<string, unknown>;
 }
 
-const { title, paintletUrl } = Astro.props;
+const { title, paintletUrl, knobConfig } = Astro.props;
+const config = JSON.stringify(knobConfig || {});
 ---
 
 <Layout title={title}>
@@ -27,7 +29,8 @@ const { title, paintletUrl } = Astro.props;
   <script type="module" define:vars={{ paintletUrl }}>
     CSS.paintWorklet.addModule(paintletUrl);
   </script>
-  <script src="../lib/demo.ts"></script>
+  <script type="application/json" set:html={config} />
+  <script src="../lib/demo.ts" />
 </Layout>
 
 <style>
