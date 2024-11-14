@@ -1,99 +1,104 @@
 ---
-import contour from "paintlets/src/contour/?url";
-import seigaiha from "paintlets/src/seigaiha/?url";
-import truchet from "paintlets/src/truchet/?url";
-import hexo from "paintlets/src/hexo/?url";
+import contour from "paintlets/src/contour/index.ts?url";
+import seigaiha from "paintlets/src/seigaiha/index.ts?url";
+import truchet from "paintlets/src/truchet/index.ts?url";
+import hexo from "paintlets/src/hexo/index.ts?url";
 
 import Layout from "../layouts/base.astro";
 ---
 
 <Layout title="Home">
-  <div class="app">
-    <nav class="app__nav">
-      <div class="sample contour title">
-        <a href="/demos/contour"><span>Contour</span></a>
-      </div>
-      <div class="sample seigaiha title">
-        <a href="/demos/seigaiha"><span>Seigaiha</span></a>
-      </div>
-      <div class="sample truchet title">
-        <a href="/demos/truchet"><span>Truchet</span></a>
-      </div>
-      <div class="sample hexo title">
-        <a href="/demos/hexo"><span>Hexo</span></a>
-      </div>
-    </nav>
-  </div>
+	<div class="app">
+		<nav class="app__nav">
+			<div class="sample contour title">
+				<a href="/demos/contour"><span>Contour</span></a>
+			</div>
+			<div class="sample seigaiha title">
+				<a href="/demos/seigaiha"><span>Seigaiha</span></a>
+			</div>
+			<div class="sample truchet title">
+				<a href="/demos/truchet"><span>Truchet</span></a>
+			</div>
+			<div class="sample hexo title">
+				<a href="/demos/hexo"><span>Hexo</span></a>
+			</div>
+		</nav>
+	</div>
 
-  <script type="module" define:vars={{ contour, seigaiha, truchet, hexo }}>
-    CSS.paintWorklet.addModule(contour);
-    CSS.paintWorklet.addModule(seigaiha);
-    CSS.paintWorklet.addModule(truchet);
-    CSS.paintWorklet.addModule(hexo);
-  </script>
+	<script type="module" define:vars={{ contour, seigaiha, truchet, hexo }}>
+		if ("paintWorklet" in CSS) {
+			CSS.paintWorklet.addModule(contour);
+			CSS.paintWorklet.addModule(seigaiha);
+			CSS.paintWorklet.addModule(truchet);
+			CSS.paintWorklet.addModule(hexo);
+		}
+    else {
+      console.error("CSS Paint API not supported");
+    }
+	</script>
 </Layout>
 
 <style>
-  :root {
-    --bg: #222;
+	:root {
+		--bg: #222;
 
-    /* TODO namespace variables! */
-    --stroke-width: 1;
-    --stroke-colour: #fff6;
-    --line-width: 0.5;
-    --line-colour: #fff6;
-  }
+		/* TODO namespace variables! */
+		--stroke-width: 1;
+		--stroke-colour: #fff6;
+		--line-width: 0.5;
+		--line-colour: #fff6;
+	}
 
-  .app {
-    display: grid;
-    place-content: center;
+	.app {
+		display: grid;
+		place-content: center;
 
-    height: 100vh;
-  }
+		height: 100vh;
+	}
 
-  .app__nav {
-    display: flex;
-    gap: 1rem;
-  }
+	.app__nav {
+		display: flex;
+		gap: 1rem;
+	}
 
-  .sample {
-    width: 200px;
+	.sample {
+		width: 200px;
 
-    &.contour {
-      --grid-unit: 64;
-      --line-frequency: 16;
-    }
+		&.contour {
+			--grid-unit: 64;
+			--line-frequency: 16;
+		}
 
-    &.seigaiha {
-      /* --bg is inherited */
-    }
+		&.seigaiha {
+			/* --bg is inherited */
+		}
 
-    &.truchet {
-      --tile-size: 30;
-    }
+		&.truchet {
+			--tile-size: 30;
+		}
 
-    &.hexo {
-      /* TODO vary --radius */
-      --gap: 5;
-    }
+		&.hexo {
+			/* TODO vary --radius */
+			--gap: 5;
+		}
 
-    & a {
-      display: grid;
-      align-content: end;
+		& a {
+			display: grid;
+			align-content: end;
 
-      position: relative;
-      aspect-ratio: 1;
-      text-decoration: none;
+			position: relative;
+			aspect-ratio: 1;
+			text-decoration: none;
 
-      &::before {
-        position: absolute;
-        inset: 0;
-      }
-    }
+			&::before {
+				position: absolute;
+				inset: 0;
+			}
+		}
 
-    & span {
-      padding: 0.25rem 0.5rem;
-      background: #fffa;
-    }
-  }
+		& span {
+			padding: 0.25rem 0.5rem;
+			background: #fffa;
+		}
+	}
 </style>

@@ -14,8 +14,7 @@ module.exports = {
     }),
     postcssPresetEnv({
       features: {
-        "nesting-rules": true,
-        "custom-media-queries": { importFrom: [{ customMedia }] },
+        "custom-media-queries": true,
       },
     }),
   ],
