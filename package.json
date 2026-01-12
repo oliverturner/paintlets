@@ -12,6 +12,7 @@
   "scripts": {
     "test": "npm t -ws",
     "start": "npm start -w website",
-    "build": "npm run build -w website"
+    "build": "npm run build -w website",
+    "preview": "npm run preview -w website"
   }
 }
