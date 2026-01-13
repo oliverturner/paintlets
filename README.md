@@ -1,5 +1,7 @@
 # Paintlets
 
+![Screenshot](docs/screenshot.webp)
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e7a8ba84-63cc-42d2-a527-ad1f7407a7a5/deploy-status)](https://app.netlify.com/sites/oliverturner-paintlets/deploys)
 
 ## What this is
@@ -10,7 +12,7 @@ This is a playground for experimentation with using Houdini APIs to create CSS P
 
 ## How it works
 
-In a local context the paintlets are imported via Vite's ability to define the way a module is loaded: by applying the query strings `?worker&url`. 
+In a local context the paintlets are imported via Vite's ability to define the way a module is loaded: by applying the query strings `?worker&url`.
 
 In production one would load them as an npm module (once they're released!)
 
@@ -24,8 +26,13 @@ To develop locally run `npm start` in the root of the project: this will serve t
 
 ## Production
 
-To release ensure that you run 
+To release please ensure that you run
 1. `npm run build`
 2. `npm run preview`
 
-This will let you ensure that the paintlets actually display correctly!
+This will let you verify that the paintlets actually display correctly!
+
+## TODO
+
+- [ ] Release as npm module(s)
+- [ ] Use Playwright in a pre-commit hook to test against a visual snapshot in order to guard against regressions (will need pre-configured seed values to ensure deterministic output)

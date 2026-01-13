@@ -1,4 +1,4 @@
-import { Truchet } from "./worklet";
+import { Truchet } from "./worklet.ts";
 
 try {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

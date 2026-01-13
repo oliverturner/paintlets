@@ -1,4 +1,4 @@
-import { parsers } from "../utils";
+import { parsers } from "../utils.ts";
 
 describe("utils", () => {
   describe("normaliseInput", () => {
@@ -13,13 +13,18 @@ describe("utils", () => {
         ],
         [
           "rgb(255,255,255) rgb(255,255,255,1) rgb(255,255,255,0.5) rgb(255,255,255,.5)",
-          ["rgb(255,255,255)", "rgb(255,255,255,1)", "rgb(255,255,255,0.5)", "rgb(255,255,255,.5)"],
+          [
+            "rgb(255,255,255)",
+            "rgb(255,255,255,1)",
+            "rgb(255,255,255,0.5)",
+            "rgb(255,255,255,.5)",
+          ],
         ],
         [
           "red hsl(300, 25%, 0) rgba(255,255,255,.5) green blue",
           ["red", "hsl(300, 25%, 0)", "rgba(255,255,255,.5)", "green", "blue"],
         ],
-      ])("%s", (input, expected) => {
+      ])("%s", (input: string, expected: string[]) => {
         expect(parsers.colours(input)).toEqual(expected);
       });
     });

@@ -1,4 +1,4 @@
-import { Seigaiha } from "./worklet";
+import { Seigaiha } from "./worklet.ts";
 
 
 try {

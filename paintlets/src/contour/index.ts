@@ -1,4 +1,4 @@
-import { Contour } from "./worklet";
+import { Contour } from "./worklet.ts";
 
 try {
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment

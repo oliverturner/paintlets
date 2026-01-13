@@ -1,7 +1,7 @@
-import type * as houdini from "../../typings/houdini";
-import type { PaintletProps, PointXY, Tile, TileProps } from "./types";
+import type * as houdini from "../../typings/houdini.d.ts";
+import type { PaintletProps, PointXY, Tile, TileProps } from "./types.d.ts";
 
-import { normaliseInput } from "../../lib/utils";
+import { normaliseInput } from "../../lib/utils.ts";
 
 
 

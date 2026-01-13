@@ -5,6 +5,7 @@
   "keywords": [],
   "author": "Oliver Turner",
   "license": "ISC",
+  "type": "module",
   "workspaces": [
     "paintlets",
     "website"
@@ -13,6 +14,10 @@
     "test": "npm t -ws",
     "start": "npm start -w website",
     "build": "npm run build -w website",
-    "preview": "npm run preview -w website"
+    "preview": "npm run preview -w website",
+    "test:browser": "vitest"
+  },
+  "devDependencies": {
+    "@vitest/browser-playwright": "4.0.17"
   }
 }
