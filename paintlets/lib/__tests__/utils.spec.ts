@@ -24,7 +24,7 @@ describe("utils", () => {
           "red hsl(300, 25%, 0) rgba(255,255,255,.5) green blue",
           ["red", "hsl(300, 25%, 0)", "rgba(255,255,255,.5)", "green", "blue"],
         ],
-      ])("%s", (input: string | undefined, expected: string | undefined) => {
+      ])("%s", (input: string, expected: string[]) => {
         expect(parsers.colours(input)).toEqual(expected);
       });
     });

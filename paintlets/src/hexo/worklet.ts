@@ -1,8 +1,8 @@
-import type * as houdini from "../../typings/houdini";
+import type * as houdini from "../../typings/houdini.d.ts";
 
 import { createNoise2D } from "simplex-noise";
 
-import { normaliseInput } from "../../lib/utils";
+import { normaliseInput } from "../../lib/utils.ts";
 
 interface FillProps {
 	h: string;
