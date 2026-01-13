@@ -1,4 +1,4 @@
-import * as houdini from "../typings/houdini";
+import type * as houdini from "../typings/houdini.d.ts";
 
 // TODO extract into typings
 interface PaintletProp {
